@@ -1,0 +1,115 @@
+$color-navbar: #2b2b2b;
+$color-sidebar: #3c3f41; 
+$color-texto: #ffffff; 
+$color-hover: #f10e0e; 
+$color-activo: #4cae4c; 
+$ancho-sidebar: 250px;
+$alto-navbar: 56px;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #e9ecef;
+}
+
+.custom-navbar {
+  background-color: $color-navbar;
+  min-height: $alto-navbar;
+
+  .navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+.sidebar-container {
+  flex-direction: column;
+  min-height: calc(100vh - #{$alto-navbar});
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .custom-sidebar {
+    background-color: $color-sidebar;
+    width: 100%;
+    flex-wrap: nowrap; 
+
+    @media (min-width: 768px) {
+      width: $ancho-sidebar;
+    }
+
+    .sidebar-link {
+      color: $color-texto;
+      transition: background-color 0.2s ease, padding-left 0.2s ease;
+
+      &:hover {
+        background-color: rgba($color-hover, 0.2);
+      }
+
+      &.active {
+        background-color: $color-activo;
+        font-weight: bold;
+        border-left: 4px solid #fff;
+      }
+    }
+  }
+}
+.main-content {
+    flex-grow: 1;
+  }
+.avatar-group {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+
+  .avatar, .avatar-count {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -10px;
+    object-fit: cover;
+  }
+
+  .avatar-count {
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@mixin elevar-en-hover($distancia: 10px, $sombra: 0 1rem 1.5rem rgba(0, 0, 0, 0.25)) {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-#{$distancia});
+    box-shadow: $sombra;
+  }
+}
+
+.card {
+  @include elevar-en-hover(10px, 0 1rem 1.5rem rgba($color-hover, 0.35));
+}
+
+@keyframes cargaPagina {
+  from {
+    opacity: 0;
+    margin-top: 20px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+.project-list .card {
+  opacity: 0;
+  animation: cargaPagina 0.6s ease forwards;
+}
+
+.project-list .card:nth-child(2) { animation-delay: 0.15s; }
+.project-list .card:nth-child(3) { animation-delay: 0.3s; }

@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <title>Dashboard</title>
 </head>
 <body>
-    
+    <nav class="navbar custom-navbar sticky-top">
+        <div class="container-fluid">
+            <button class="btn btn-outline-light d-md-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+            <a class="navbar-brand text-white" href="#"> Minecraft </a>
+            <a class="navbar-brand m-0" href="#">
+                <img src="https://i.scdn.co/image/ab6765630000ba8af770691237911d7e512de37c" alt="Logo"
+                    width="30" height="24" class="d-inline-block align-text-top" />
+            </a>
+        </div>
+    </nav>
+
+    <div class="d-flex sidebar-container">
+        <div class="nav flex-column custom-sidebar collapse d-md-flex" id="sidebarMenu">
+            <a href="#" class="sidebar-link active text-decoration-none p-3">
+                <span class="hide-on-collapse">Creepers</span>
+            </a>
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <span class="hide-on-collapse">Zombie</span>
+            </a>
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <span class="hide-on-collapse">Esqueleto</span>
+            </a>
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <span class="hide-on-collapse">Araña</span>
+            </a>
+        </div>
+
+        <div class="main-content p-4">
+            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo">
+                + Nueva Tarea
+            </button>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                Nueva Tarea
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="recipient-name" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Contenido:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>Dashboard</h1>
+            <div class="project-list">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>PVP de Usuarios</span>
+                            <span class="badge text-bg-warning">En Progreso</span>
+                        </div>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="small text-muted">Equipo:</span>
+                                           <div class="avatar-group">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XeF09hIDRZC10k6WIrYTVrxbFJ2_nCH-gh8CN02bKQ&s=10"
+                    class="avatar"
+                    title="Crepp"
+                  />
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1C5sVTxubD9p2gSo-yBhU_hVaL4-f2IJNPd9o7KlE2A&s=10"
+                    class="avatar"
+                    title="enderman"
+                  />
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI1QxeIECTILWh6tSQZjOlwfAKXBnHhF6JyVKQrShrSw&s=10"
+                    class="avatar"
+                    title="cerdito"
+                  />
+                  <div class="avatar-count">+5</div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Recarga de Datos</span>
+                            <span class="badge text-bg-danger">Retrasado</span>
+                        </div>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="5"
+                            aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                style="width: 5%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="small text-muted">Equipo:</span>
+                                                                       <div class="avatar-group">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XeF09hIDRZC10k6WIrYTVrxbFJ2_nCH-gh8CN02bKQ&s=10"
+                    class="avatar"
+                    title="Crepp"
+                  />
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1C5sVTxubD9p2gSo-yBhU_hVaL4-f2IJNPd9o7KlE2A&s=10"
+                    class="avatar"
+                    title="enderman"
+                  />
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI1QxeIECTILWh6tSQZjOlwfAKXBnHhF6JyVKQrShrSw&s=10"
+                    class="avatar"
+                    title="cerdito"
+                  />
+                  <div class="avatar-count">+5</div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Hackers Eliminados</span>
+                            <span class="badge text-bg-success">Completado</span>
+                        </div>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example"
+                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                style="width: 100%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="small text-muted">Equipo:</span>
+                                                                       <div class="avatar-group">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XeF09hIDRZC10k6WIrYTVrxbFJ2_nCH-gh8CN02bKQ&s=10"
+                    class="avatar"
+                    title="Crepp"
+                  />
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1C5sVTxubD9p2gSo-yBhU_hVaL4-f2IJNPd9o7KlE2A&s=10"
+                    class="avatar"
+                    title="enderman"
+                  />
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI1QxeIECTILWh6tSQZjOlwfAKXBnHhF6JyVKQrShrSw&s=10"
+                    class="avatar"
+                    title="cerdito"
+                  />
+                  <div class="avatar-count">+5</div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
